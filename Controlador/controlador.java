@@ -55,12 +55,21 @@ public class controlador implements ActionListener
         {
             venPrin.crearDialogoAgregarDeposito();
             this.venPrin.miDeposito.agregarOyenteBoton(this);
+            PanelResultados.mostrarResultados("Se ha hecho un deposito de:\n" + DialogoDepositar.getCantidadDepositar());
         }
 
         if(comando.equals("retirar"))
         {
             venPrin.crearDialogoAgregarRetiro();
             this.venPrin.miRetiro.agregarOyenteBoton(this);
+        }
+
+        if(comando.equals("depositarCuenta"))
+        {
+            Integer Deposito = Integer.valueOf(DialogoDepositar.getCantidadDepositar());
+            Integer Saldo = Integer.parseInt(DialogoCrearCuenta.getTfSaldo());
+            Saldo = Saldo + Deposito;
+            PanelResultados.mostrarResultados("Se han depositado $" + DialogoDepositar.getCantidadDepositar() + " pesos.");
         }
 
         if(comando.equals("Salir"))

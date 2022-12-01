@@ -17,7 +17,7 @@ public class DialogoDepositar extends JDialog {
         private JLabel lbCuentas;
         public JComboBox<Cuenta> cbCuentas;
         private JLabel lbCantidadDepositar;
-        private JTextField tfCantidadDepositar;
+        private static JTextField tfCantidadDepositar;
         public JButton btnDepositar;
 
         public DialogoDepositar() {
@@ -42,7 +42,6 @@ public class DialogoDepositar extends JDialog {
                 btnDepositar.setActionCommand("depositarCuenta");
 
                 this.setLayout(null);
-                this.getContentPane().setBackground(Color.decode("#a3b18a"));
                 this.setTitle("Depositar Sueldo");
                 this.setSize(300, 300);
                 this.setLocationRelativeTo(null);
@@ -53,7 +52,7 @@ public class DialogoDepositar extends JDialog {
                 this.add(btnDepositar);
         }
 
-        public String getCantidadDepositar() {
+        public static String getCantidadDepositar() {
                 return tfCantidadDepositar.getText();
         }
 

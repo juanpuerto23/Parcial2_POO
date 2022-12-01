@@ -42,7 +42,6 @@ public class DialogoRetirar extends JDialog {
                 btnRetirar.setActionCommand("retirar");
 
                 this.setLayout(null);
-                this.getContentPane().setBackground(Color.decode("#a3b18a"));
                 this.setTitle("Retirar Sueldo");
                 this.setSize(300, 300);
                 this.setLocationRelativeTo(null);
