@@ -20,10 +20,7 @@ public class PanelOperaciones extends JPanel
         this.setBackground(Color.WHITE);
 
         btnBorrar = new JButton("Borrar");
-        btnBorrar.setForeground(Color.BLACK);
-        btnBorrar.setBackground(Color.WHITE);
-        btnBorrar.setBorder(BorderFactory.createRaisedBevelBorder());
-        btnBorrar.setBounds(320, 22, 100, 40);
+        btnBorrar.setBounds(105, 60, 170, 20);
         btnBorrar.setActionCommand("borrarTexto");
 
         btnAgregarCuenta = new JButton("Agregar Cuenta");

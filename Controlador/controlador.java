@@ -20,7 +20,9 @@ public class controlador implements ActionListener
     {
         this.venPrin = pVenPrin;
         this.Banco = pBanco;
-        this.venPrin.miPanelOperaciones.btnAgregarCuenta;
+        this.venPrin.miPanelOperaciones.btnAgregarCuenta.addActionListener(this);
+        this.venPrin.miPanelOperaciones.btnBorrar.addActionListener(this);
+        this.venPrin.miPanelOperaciones.btnSalir.addActionListener(this);
         this.venPrin.miPanelOperaciones.agregarOyentesBotones(this);
         this.venPrin.miPanelResultados.mostrarResultado("Funciona :D");
     }
@@ -34,6 +36,15 @@ public class controlador implements ActionListener
         {
             venPrin.crearDialogoAgregarLibro();
             this.venPrin.miCuenta.agregarOyenteBoton(this);
+        }
+
+        if(comando.equals("Aceptar"))
+        {
+            Integer Saldo = Integer.parseInt(DialogoCrearCuenta.getTfSaldo());
+            String TipoCuenta = DialogoCrearCuenta.getTipoCuenta();
+            Integer NumCuenta = Integer.parseInt(DialogoCrearCuenta.getNumCuenta());
+            Banco.addCuenta(new Cuenta(Saldo, NumCuenta, TipoCuenta));
+            PanelResultados.mostrarResultados("Se ha creado una nueva cuenta!\n");
         }
 
         if(comando.equals("Salir"))
