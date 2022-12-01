@@ -4,6 +4,8 @@ import Modelo.Banco;
 import Modelo.Cuenta;
 import vista.VentanaPrincipal;
 import vista.DialogoCrearCuenta;
+import vista.DialogoRetirar;
+import vista.DialogoDepositar;
 import vista.PanelEntradaDatos;
 import vista.PanelResultados;
 import java.awt.event.ActionEvent;
@@ -20,11 +22,13 @@ public class controlador implements ActionListener
     {
         this.venPrin = pVenPrin;
         this.Banco = pBanco;
+        this.venPrin.miPanelOperaciones.btnRetirar.addActionListener(this);
+        this.venPrin.miPanelOperaciones.btnDepositar.addActionListener(this);
         this.venPrin.miPanelOperaciones.btnAgregarCuenta.addActionListener(this);
         this.venPrin.miPanelOperaciones.btnBorrar.addActionListener(this);
         this.venPrin.miPanelOperaciones.btnSalir.addActionListener(this);
         this.venPrin.miPanelOperaciones.agregarOyentesBotones(this);
-        this.venPrin.miPanelResultados.mostrarResultado("Funciona :D");
+        this.venPrin.miPanelResultados.mostrarResultado("Programa Inicializado Correctamente.");
     }
 
     @Override
@@ -34,7 +38,7 @@ public class controlador implements ActionListener
 
         if(comando.equals("AgregarCuenta"))
         {
-            venPrin.crearDialogoAgregarLibro();
+            venPrin.crearDialogoAgregarCuenta();
             this.venPrin.miCuenta.agregarOyenteBoton(this);
         }
 
@@ -47,9 +51,26 @@ public class controlador implements ActionListener
             PanelResultados.mostrarResultados("Se ha creado una nueva cuenta!\n");
         }
 
+        if(comando.equals("depositar"))
+        {
+            venPrin.crearDialogoAgregarDeposito();
+            this.venPrin.miDeposito.agregarOyenteBoton(this);
+        }
+
+        if(comando.equals("retirar"))
+        {
+            venPrin.crearDialogoAgregarRetiro();
+            this.venPrin.miRetiro.agregarOyenteBoton(this);
+        }
+
         if(comando.equals("Salir"))
         {
             System.exit(0);
+        }
+
+        if (comando.equals("borrarTexto")) {
+            vista.PanelEntradaDatos.borrarTf();
+            this.venPrin.miPanelResultados.borrarTa();
         }
     }
 }

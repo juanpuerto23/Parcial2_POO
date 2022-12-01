@@ -9,6 +9,8 @@ public class VentanaPrincipal extends JFrame
     public PanelOperaciones miPanelOperaciones;
     public PanelResultados miPanelResultados;
     public DialogoCrearCuenta miCuenta;
+    public DialogoDepositar miDeposito;
+    public DialogoRetirar miRetiro;
 
     
     
@@ -41,8 +43,18 @@ public class VentanaPrincipal extends JFrame
         this.setVisible(true);
     }
     
-    public void crearDialogoAgregarLibro()
+    public void crearDialogoAgregarCuenta()
     {
         miCuenta = new DialogoCrearCuenta();
+    }
+
+    public void crearDialogoAgregarDeposito()
+    {
+        miDeposito = new DialogoDepositar();
+    }
+
+    public void crearDialogoAgregarRetiro()
+    {
+        miRetiro = new DialogoRetirar();
     }
 }

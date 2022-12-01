@@ -13,11 +13,21 @@ public class PanelOperaciones extends JPanel
     public JButton btnAgregarCuenta;
     public JButton btnSalir;
     public JButton btnBorrar;
+    public JButton btnDepositar;
+    public JButton btnRetirar;
 
     public PanelOperaciones()
     {
         this.setLayout(null);
         this.setBackground(Color.WHITE);
+
+        btnDepositar = new JButton("Depositar");
+        btnDepositar.setBounds(20, 40, 170, 20);
+        btnDepositar.setActionCommand("depositar");
+
+        btnRetirar = new JButton("Retirar");
+        btnRetirar.setBounds(200, 40, 170, 20);
+        btnRetirar.setActionCommand("retirar");
 
         btnBorrar = new JButton("Borrar");
         btnBorrar.setBounds(105, 60, 170, 20);
@@ -40,12 +50,17 @@ public class PanelOperaciones extends JPanel
         this.add(btnAgregarCuenta);
         this.add(btnBorrar);
         this.add(btnSalir);
+        this.add(btnDepositar);
+        this.add(btnRetirar);
     }
 
     public void agregarOyentesBotones(ActionListener pAL)
     {
         btnAgregarCuenta.addActionListener(pAL);
         btnSalir.addActionListener(pAL);
+        btnBorrar.addActionListener(pAL);
+        btnDepositar.addActionListener(pAL);
+        btnRetirar.addActionListener(pAL);
     }
 
 

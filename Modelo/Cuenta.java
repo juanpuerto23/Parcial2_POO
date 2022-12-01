@@ -37,6 +37,6 @@ public class Cuenta
 
     public String toString()
     {
-        return("-Numero de cuena: " + numeroCuenta + "\n-Saldo Inicial: " + saldo);
+        return("-Numero de cuena: " + numeroCuenta + "\n-Saldo Inicial: " + saldo + "\n-TipoCuenta: " + tipoCuenta);
     }
 }
